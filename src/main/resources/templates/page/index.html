@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script src="/static/jquery/jquery-1.9.0.min.js"></script>
+</head>
+<script type="text/javascript">
+    var ls = window.localStorage;
+    //alert(ls["token"]);
+</script>
+<body>
+    <h1>首页</h1>
+    <hr>
+    <ul>
+        <li><a onclick="a1()">个人中心</a></li>
+        <li><a onclick="a2()">会员中心</a></li>
+        <li><a href="logout">退出登录</a></li>
+    </ul>
+</body>
+<script type="text/javascript">
+    //href="../user/index"
+    //href="../vip/index"
+    function a2(){
+        alert(ls["token"]);
+        window.location.href = '../vip/index?token='+ls["token"];
+    }
+    function a1(){
+        window.location.href = '../user/index?token='+ls["token"];
+    }
+</script>
+</html>
